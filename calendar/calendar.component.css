@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;900&display=swap');
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+
+* {
+    font-family: 'Google Sans', Roboto, Arial, sans-serif;
+    color: #3c4043;
+    font-weight: 400;
+}
+
+/* calendar header */
+.header {
+    height: 3.5em;
+    line-height: 3.5em;
+    text-align: left;
+    padding-left: 14.2%;
+    border: 1px solid #ccc;
+    background: #ededed;
+    font-size: 20px;
+}
+.month-switcher button {
+    border: none;
+    outline: none;
+    user-select: none;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+/* calendar body */
+.days-container {
+    width: 100%;
+    border-spacing: 0;
+}
+.days-container th, .days-container td {
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    vertical-align: top;
+    text-align: center;
+    width: 14.2%;
+    background: white;
+}
+.days-container th:first-child, .days-container td:first-child {
+    border-left: 1px solid #ccc;
+}
+.days-container th {
+    line-height: 3em;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+.days-container td {
+    font-size: 14px;
+    position: relative;
+}
+
+/* day */
+p {
+    margin: 0;
+    line-height: 3em;
+}
+.day-event {
+    height: 2em;
+    line-height: 2;
+    margin-bottom: 5px;
+    margin-left: -2px;
+    margin-right: -2px;
+    color: #3c4043;
+}
+.day-event.solo {
+    width: calc(100% - 12px);
+    margin-left: 6px;
+    margin-right: 6px;
+    border-radius: 5px;
+}
+.day-event.left {
+    width: calc(100% - 4px);
+    margin-left: 6px;
+    border-radius: 5px 0 0 5px;
+}
+.day-event.right {
+    width: calc(100% - 4px);
+    margin-right: 6px;
+    border-radius: 0 5px 5px 0;
+}
+.highlighted {
+    background: cornflowerblue;
+    font-weight: 500;
+    color: white;
+}

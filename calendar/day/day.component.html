@@ -1,0 +1,21 @@
+<p
+    [ngClass]="{
+        'highlighted': today
+    }"
+    [ngStyle]="{
+        marginBottom: day.events.length < 1 ? '66px' : '0'
+    }">{{day.date.getDate()}}</p>
+<div 
+    *ngFor="let event of day.events; let i = index" 
+    class="day-event"
+    [style.background]="event.color"
+    [ngClass]="{
+        'solo': event.startToday && event.endToday,
+        'right': !event.startToday && event.endToday,
+        'left': event.startToday && !event.endToday
+    }"
+    [ngStyle]="{
+        marginTop: event.position > 1 && i + 1 !== event.position ? 
+            'calc(' + (event.position - i - 1) * 2 + 'em + ' + ((event.position - i - 1) * 5 + (i > 0 ? 5 : 0)) + 'px)' : '0'
+    }">{{event.description}}</div>
+

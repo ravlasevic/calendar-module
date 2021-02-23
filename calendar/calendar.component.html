@@ -1,0 +1,38 @@
+<div class='header'>
+    <div class='month-switcher'>
+        <button (click)="generateDays(-1)">
+            <span class="material-icons">
+                keyboard_arrow_left
+            </span>
+        </button>
+        <button (click)="generateDays(1)" >
+            <span class="material-icons">
+                keyboard_arrow_right
+            </span>
+        </button>
+        {{current.toLocaleString('default', { month: 'long' })}} {{current.getFullYear()}}
+    </div>
+</div>
+<table class='days-container'>
+    <thead>
+        <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let week of weeks">
+            <td *ngFor="let day of week.days">
+                <day 
+                    *ngIf="!day.hidden"
+                    [day] = "day"
+                ></day>
+            </td>
+        </tr> 
+    </tbody>
+</table>
